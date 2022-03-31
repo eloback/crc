@@ -4,6 +4,7 @@ using namespace std;
 
 class CRC {
     string input,divisor,dividend,result;
+    string data_rec;
     int len_dividend, len_gen;
 
 public:
@@ -24,7 +25,6 @@ public:
     }
     void  moduloDiv()
     {
-
         string tempDiv=divisor;
         string tempDividend=dividend.substr(0, len_gen);
         int j=len_gen;
@@ -35,8 +35,6 @@ public:
             j++;
         }
         result= input + extraXor(tempDividend, tempDiv);
-
-
     }
     void getdata()
     {
@@ -65,7 +63,6 @@ public:
     }
     void receiver_side()
     {
-        string data_rec;
         cout<<"\nEnter Data Received: ";
         cin>>data_rec;
 
